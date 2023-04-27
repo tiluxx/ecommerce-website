@@ -14,7 +14,7 @@ async function LoginHandler(user) {
         .post("http://localhost:5500/api/auth/login.php", user, {
             headers: {
                 "Access-Control-Allow-Origin": "*",
-                "Target-Url": "http://localhost:80/test",
+                "Target-Url": "http://localhost:80",
             },
         })
         .then((res) => {
@@ -26,7 +26,8 @@ async function LoginHandler(user) {
                     document.getElementById("errorMessage").style.display =
                         "none";
                 }, 3000);
-                document.getElementById("errorMessage").innerHTML = resData.message;
+                document.getElementById("errorMessage").innerHTML =
+                    resData.message;
             } else {
                 clearTimeout(timeoutId);
                 localStorage.setItem("username", resData.data.username);
