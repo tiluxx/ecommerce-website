@@ -1,14 +1,25 @@
 window.onload = getProductList()
 
+function viewDetailHandler(index) {
+    const productId = document.getElementById('productId' + index)
+    const productName = document.getElementById('productName' + index)
+    const productDescription = document.getElementById('productDescription' + index)
+    const productPrice = document.getElementById('productPrice' + index)
+    document.getElementById('modalProductId').value = productId.value
+    document.getElementById('modalProductName').innerHTML = productName.innerHTML
+    document.getElementById('modalProductPrice').innerHTML = productPrice.innerHTML
+    document.getElementById('modalProductDescription').innerHTML = productDescription.innerHTML
+}
+
 async function getProductList() {
     const productList = document.getElementById('productList')
 
     await axios.get(
-        'http://localhost:3000/api/products/get_products.php',
+        'http://localhost:5500/api/products/get_products.php',
         {
             headers: {
                 "Access-Control-Allow-Origin": "*",
-                "Target-Url": "http://ltn-webservices.great-site.net"
+                "Target-Url": "http://localhost:80/test"
             }
         }
     )
@@ -21,17 +32,16 @@ async function getProductList() {
                     document.getElementById('errorMessage').style.display = 'none'
                 }, 3000)
                 document.getElementById('errorMessage').innerHTML = resData.message
-                return false
             } else {
                 clearTimeout(timeoutId)
                 const products = resData.data
-                console.log(products)
                 
-                products.forEach(product => {
-                    $('#productList').append(
-                        '<div class="col-sm-1 col-md-4 col-lg-3 col-xl-2">' +
+
+                products.forEach((product, index) => {
+                    productList.innerHTML +=
+                    '<div class="col-sm-1 col-md-4 col-lg-3 col-xl-2">' +
                         '<div class="card shadow-sm">' +
-                            '<svg' +
+                            '<svg ' +
                                 'class="bd-placeholder-img card-img-top"' +
                                 'width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">' +
                                 '<title>Placeholder</title>' +
@@ -39,30 +49,23 @@ async function getProductList() {
                                 '<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>' +
                             '</svg>' +
                             '<div class="card-body">' +
-                                '<a href="#" type="button" class="card-title card-link text-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">' +
-                                    '<h5>' + product.name + '</h5>' +
+                                `<input id="productId`+ index + `" type="hidden" value="${product.productId}">` +
+                                '<a href="#" type="button" onclick="viewDetailHandler('+ index +')" class="card-title card-link text-primary" data-bs-toggle="modal" data-bs-target="#productDetailModal">' +
+                                    '<h5 id="productName'+ index +'">' + product.productName + '</h5>' +
                                 '</a>' +
-                                '<p class="card-text">' +
-                                    product.desc +
+                                '<p id="productDescription'+ index +'" class="card-text">' +
+                                    product.productDescription +
                                 '</p>' +
                                 '<div class="d-flex justify-content-between align-items-center">' +
-                                    '<h5 class="card-text">' + product.price + '</h5>' +
+                                    '<h5 id="productPrice'+ index +'" class="card-text">' + product.productPrice + '</h5>' +
                                 '</div>' +
                             '</div>' +
                         '</div>' +
                     '</div>'
-                    )
                 })
-                window.location.href = '/pages/admin/product-management.html'
-                return true
             }
         })
         .catch(error => {
-            document.getElementById('errorMessage').style.display = 'block'
-            setTimeout(() => {
-                document.getElementById('errorMessage').style.display = 'none'
-            }, 3000)
-            document.getElementById('errorMessage').innerHTML = error
-            return false
+            console.log(error)
         })   
 }

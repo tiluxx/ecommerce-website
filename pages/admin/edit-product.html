@@ -117,20 +117,20 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-5 col-lg-6 col-md-8 border rounded my-5 p-4  mx-3">
-                    <p class="mb-5"><a href="index.php">Go back</a></p>
-                    <h3 class="text-center text-secondary mt-2 mb-3 mb-3">Add new product</h3>
+                    <p class="mb-5"><a href="index.php">Quay lại</a></p>
+                    <h3 class="text-center text-secondary mt-2 mb-3 mb-3">Thêm sản phẩm mới</h3>
                     <form id="addProductForm" method="POST" novalidate enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="name">Product name</label>
-                            <input id="product-name" name="product-name" required class="form-control" type="text" placeholder="Product name">
+                            <input id="product-name" name="product-name" required class="form-control" type="text" placeholder="Tên sản phẩm">
                         </div>
                         <div class="form-group">
                             <label for="price">Product price</label>
-                            <input id="product-price" name="product-price" required class="form-control" type="number" placeholder="Product price">
+                            <input id="product-price" name="product-price" required class="form-control" type="number" placeholder="Giá bán">
                         </div>
                         <div class="form-group">
                             <label for="desc">Product description</label>
-                            <textarea id="product-desc" name="product-desc" rows="4" class="form-control" placeholder="Description"></textarea>
+                            <textarea id="product-desc" name="product-desc" rows="4" class="form-control" placeholder="Mô tả"></textarea>
                         </div>
                         <div class="form-group">
                             <div id="errorMessage" class='alert alert-danger'></div>
@@ -145,6 +145,6 @@
     </div>
     <!-- JS -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/js/addProduct.js"></script>
+    <script src="/js/product.js"></script>
 </body>
 </html>

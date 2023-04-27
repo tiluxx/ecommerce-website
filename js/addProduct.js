@@ -37,12 +37,12 @@ async function addProductHandler(product) {
     }
 
     await axios.post(
-        'http://localhost:3000/api/products/add_product.php',
+        'http://localhost:5500/api/products/add_product.php',
         product, 
         {
             headers: {
                 "Access-Control-Allow-Origin": "*",
-                "Target-Url": "http://ltn-webservices.great-site.net"
+                "Target-Url": "http://localhost:80/test"
             }
         }
     )
