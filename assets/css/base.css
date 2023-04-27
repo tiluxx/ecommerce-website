@@ -1,0 +1,132 @@
+:root {
+    --primary-orange: hsl(26, 100%, 55%);
+    --primary-pale-orange: hsl(25, 100%, 94%);
+    
+    --neutral-very-dark-blue: hsl(220, 13%, 13%);
+    --neutral-dark-grayish-blue: hsl(219, 9%, 45%);
+    --neutral-grayish-blue: hsl(220, 14%, 75%);
+    --neutral-light-grayish-blue: hsl(223, 64%, 98%);
+
+    --white-color: hsl(0, 0%, 100%);
+
+    --border-radius-12: 12px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    line-height: 1.6rem;
+    font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
+    color: var(--neutral-very-dark-blue);
+}
+
+body {
+    height: 100%;
+    background-color: var(--white-color);
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+.space-section-h20 {
+    height: 20px;
+}
+
+.space-section-h28 {
+    height: 28px;
+}
+
+.separated-border {
+    height: 1px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+#errorMessage {
+    display: none;
+}
+
+/* Slide product's image */
+.img-selected.content__product__thumbnail-img:hover img {
+    opacity: 1;
+}
+
+.img-selected > div {
+    display: block;
+}
+
+/* Modal */
+#modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+    display: none;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0, 0%, 0%, 75%);
+}
+
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+
+/* Mobile modal */
+#mobile-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+    display: none;
+}
+
+.mobile-modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    position: relative;
+    width: 64%;
+    background-color: var(--white-color);
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+
+.detail-img-selected.detail-product__thumbnail-img:hover img {
+    opacity: 1;
+}
+
+.detail-img-selected > div {
+    display: block;
+}

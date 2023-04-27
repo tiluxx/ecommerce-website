@@ -1,0 +1,300 @@
+/* Mobile */
+@media (min-width: 360px) and (max-width: 739px) {
+    .main {
+        margin: 0;
+    }
+
+    .space-section-h20 {
+        display: none;
+    }
+
+    .space-section-h28 {
+        display: none;
+    }
+
+    /* Header */
+    .header {
+        margin: 24px;
+    }
+
+    .header__menu {
+        display: block;
+    }
+
+    .header__navbar {
+        display: none;
+    }
+
+    .header__main-info {
+        gap: 20px;
+    }
+
+    .header__user {
+        gap: 28px;
+    }
+
+    .header__user-cart-notice {
+        top: -8px;
+        font-size: 1.2rem;
+        line-height: 12px;
+        padding: 2px 8px;
+    }
+
+    .header__user-cart-list {
+        z-index: 1;
+        top: calc(100% + 40px);
+        right: -64px;
+        min-width: 382px;
+        min-height: 280px;
+    }
+    
+    .header__user-cart-list-item {
+        padding: 8px 8px;
+    }
+
+    .header__user-cart-list__heading {
+        padding: 28px 28px;
+        font-size: 1.8rem;
+        line-height: 18px;
+    }
+
+    .header__user-cart-list__no-cart-msg {
+        font-size: 1.8rem;
+        line-height: 18px;
+    }
+
+    .header__user-cart-item__img {
+        width: 56px;
+        height: 56px;
+        margin: 16px;
+        border-radius: 4px;
+    }
+
+    .header__user-cart-item-heading {
+        width: 80%;
+        font-size: 1.8rem;
+        line-height: 18px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        padding: 0;
+        margin: 4px 0;
+    }
+
+    .header__user-cart-item-body {
+        gap: 8px;
+        padding: 8px 0;
+    }
+
+    .header__user-cart-item-price-wrap span {
+        font-size: 1.8rem;
+        line-height: 18px;
+    }
+
+    .header__user-cart-item-final-price {
+        font-size: 2rem;
+        line-height: 20px;
+    }
+
+    .header__user-cart-checkout {
+        margin-top: 12px;
+    }
+
+    .header__user-cart-checkout-btn {
+        padding: 24px 0;
+        font-size: 1.8rem;
+        line-height: 18px;
+        letter-spacing: 1px;
+    }
+
+    .header__user-info-avatar {
+        width: 3vh;
+    }
+
+    /* Content */
+    .content {
+        height: 100%;
+        margin: 0;
+    }
+
+    .content__product {       
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .content__product__wrapper-img {
+        margin-bottom: -10px;
+        padding: 0;
+    }
+
+    .content__product__img {
+        width: 100%;
+        height: 80%;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .content__product__current-img {
+        position: relative;
+        width: 100%;
+        bottom: 36px;
+        border-radius: 0;
+    }
+
+    .mobile-content__product__img__next-btn,
+    .mobile-content__product__img__previous-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 25%;
+        background-color: var(--white-color);
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        cursor: pointer;  
+    }
+
+    .mobile-content__product__img__next-btn path,
+    .mobile-content__product__img__previous-btn path {
+        stroke: var(--neutral-very-dark-blue);
+    }
+
+    .mobile-content__product__img__next-btn:hover path,
+    .mobile-content__product__img__previous-btn:hover path {
+        stroke: var(--primary-orange);
+    }
+
+    .mobile-content__product__img__next-btn {
+        right: 16px;
+    }
+
+    .mobile-content__product__img__previous-btn {
+        left: 16px;
+    }
+
+    .content__product__thumbnail-imgs-wrapper {
+        display: none;
+    }
+
+    .content__product__infor {
+        margin: 0 28px;
+        margin-top: -48px;
+    }
+
+    .content__product__infor-company {
+        font-size: 1.4rem;
+    }
+
+    .content__product__infor-title {
+        font-size: 3.2rem;
+        line-height: 36px;
+    }
+
+    .content__product__info-price-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 28px;
+    }
+
+    .content__product__info-price {
+        gap: 20px;
+    }
+
+    .content__product__info-discount-price {
+        font-size: 2.8rem;
+        line-height: 28px;
+    }
+
+    .content__product__info-discount-amount {
+        font-size: 2rem;
+        line-height: 20px;
+    }
+
+    .content__product__info-old-price {
+        padding: 0;
+        font-size: 1.8rem;
+        line-height: 18px;
+    }
+
+    .content__product__info-quantity-adjust {
+        width: 100%;
+    }
+
+    .content__product__info-choice-wrapper {
+        margin-top: 28px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .content__product__info-quantity-minus,
+    .content__product__info-quantity-plus,
+    .content__product__info-quantity-custom {
+        height: 60px;
+    }
+
+    .content__product__info-quantity-custom {
+        font-size: 1.6rem;
+        line-height: 16px;
+    }
+
+    .content__product__info-add-to-cart {
+        margin: 0;
+        width: 100%;
+    }
+
+    .content__product__info-add-to-cart-btn {
+        width: 100%;
+        height: 60px;
+        justify-content: center;
+        font-size: 1.6rem;
+        line-height: 16px;
+    }
+
+    /* Modal */
+    #modal {
+        display: none !important;
+    }
+
+    /* Mobile modal */
+    .mobile-navbar-wrapper {
+        margin: 24px 28px;
+    }
+
+    .mobile-navbar__close {
+        margin-bottom: 36px;
+    }
+
+    .mobile-navbar__list {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .mobile-navbar__item-link {
+        font-size: 2rem;
+        line-height: 20px;
+        font-weight: 700;
+        color: var(--neutral-very-dark-blue);
+        text-decoration: none;
+    }
+
+    /* Attribution */
+    .attribution {
+        margin: 10px 0;
+    }
+}
+
+/* >= Tablet */
+@media (min-width: 740px) {}
+
+/* PC medium resolution > */
+@media (min-width: 1113px) {}
+
+/* Tablet - PC low resolution */
+@media (min-width: 740px) and (max-width: 1023px) {}
+
+/* > PC low resolution */
+@media (min-width: 1024px) and (max-width: 1239px) {}
